@@ -1,0 +1,16 @@
+<h1>Locations --> Add New Location</h1>
+<hr>
+
+<h3><em>Fill out the information below to create a new location</em></h3>
+
+<%= form_for @location do |f|%>
+    <%= f.label "Location Name:" %>
+    <%= f.text_field :name %><br><br>
+    <%= f.label "Address:" %>
+    <%= f.text_field :address %><br><br>
+    <%= f.submit %>
+<%end%><br><br>
+
+<form method="GET" action="/locations">
+    <input type="submit" value="Cancel">
+</form>
