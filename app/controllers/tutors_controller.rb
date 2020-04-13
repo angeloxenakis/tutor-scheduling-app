@@ -10,9 +10,12 @@ class TutorsController < ApplicationController
     def new
         @tutor = Tutor.new
         @locations = Location.all
+        @subjects = Subject.all
+        @tutor_subjects = TutorSubject.all
     end
 
     def create 
+        
         @tutor = Tutor.create(tutor_params)
         redirect_to tutor_path(@tutor)
     end
