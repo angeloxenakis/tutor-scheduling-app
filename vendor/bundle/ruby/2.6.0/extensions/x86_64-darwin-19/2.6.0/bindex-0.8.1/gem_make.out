@@ -1,0 +1,15 @@
+current directory: /Users/ruth/Desktop/HouSE030920/FS-Mod2/tutor-scheduling-app/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/ruth/.rvm/rubies/ruby-2.6.1/bin/ruby -I /Users/ruth/.rvm/rubies/ruby-2.6.1/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200413-76799-mm8e7x.rb extconf.rb
+creating Makefile
+
+current directory: /Users/ruth/Desktop/HouSE030920/FS-Mod2/tutor-scheduling-app/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/ruth/Desktop/HouSE030920/FS-Mod2/tutor-scheduling-app/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/ruth/Desktop/HouSE030920/FS-Mod2/tutor-scheduling-app/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20200413-76799-bbux2b/skiptrace/internal
