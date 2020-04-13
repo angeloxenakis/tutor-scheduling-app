@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200413145035) do
+ActiveRecord::Schema.define(version: 20200413163118) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "tutor_id"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20200413145035) do
     t.time "time"
   end
 
-  create_table "campuses", force: :cascade do |t|
+  create_table "locations", force: :cascade do |t|
     t.string "name"
   end
 
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20200413145035) do
 
   create_table "tutors", force: :cascade do |t|
     t.string "name"
-    t.integer "campus_id"
+    t.integer "location_id"
   end
 
 end
