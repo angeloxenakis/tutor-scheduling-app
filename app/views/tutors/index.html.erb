@@ -1,0 +1,13 @@
+<h1>All Tutors</h1>
+<hr>
+
+<ul>
+<% @tutors.each do |tutor|%>
+    <li><%= link_to tutor.name, tutor_path(tutor) %></li>
+<% end %>
+</ul>
+
+<form method="GET" action="tutors/new">
+    <input type="submit" value="+ Create New Tutor">
+</form>
+

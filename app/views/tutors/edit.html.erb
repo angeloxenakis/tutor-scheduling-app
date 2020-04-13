@@ -1,0 +1,11 @@
+<h3>Edit Tutor</h3>
+
+<%= form_for @tutor do |f|%>
+    <%= f.label "Tutor Name"%><br>
+    <%= f.text_field :name%><br><br>
+
+    <%= f.label "Select a Campus"%><br>
+    <%= f.collection_select :location_id, @locations, :id, :name%><br><br>
+
+    <%= f.submit %>
+<%end%>

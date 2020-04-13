@@ -1,6 +1,6 @@
 class TutorsController < ApplicationController
     def index 
-
+        @tutors = Tutor.all
     end
 
     def show
@@ -18,12 +18,22 @@ class TutorsController < ApplicationController
     end
 
     def edit
-
+        @tutor = Tutor.find(params[:id])
+        @locations = Location.all
     end
 
     def update
-
+        @tutor = Tutor.find(params[:id])
+        @tutor.update(tutor_params)
+        redirect_to tutor_path(@tutor)
     end
+
+    def destroy
+        @tutors = Tutor.all
+        @tutor = Tutor.find(params[:id])
+        @tutor.destroy
+        redirect_to tutors_path(@tutors)
+    end 
 
     private
 
