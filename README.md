@@ -11,10 +11,14 @@ This is an app in which a student can schedule a tutoring session with a tutor b
 * Appointment
 * Subject
 * Campus
+* TutorSubject
 
 # Relationships
 
 # Tutor -< Appointment >- Student
+# Tutor -< TutorSubject >- Subject
+# Campus -< Tutor
+# Appointment >- Subject
 
 * Tutor has many Appointments
 * Tutor has many Students through Appointments
