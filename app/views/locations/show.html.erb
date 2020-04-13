@@ -1,0 +1,7 @@
+<h1><%= @location.name %></h1>
+
+<ul>
+    <%@location.tutors.each do |tutor|%>
+        <li><%= link_to tutor.name, tutor_path(tutor) %></li>
+    <%end%>
+</ul>

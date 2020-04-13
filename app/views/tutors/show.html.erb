@@ -1,0 +1,8 @@
+<h1><%=@tutor.name%></h1>
+<h3><%=@tutor.location.name%></h3>
+
+<ul>
+    <% @tutor.subjects.each do |subject|%>
+        <li><%=subject.name%></li>
+    <%end%>
+</ul>
