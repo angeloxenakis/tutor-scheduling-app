@@ -13,9 +13,9 @@ TutorSubject.destroy_all
 
 
 # Location
-central = Location.create({name: "central"})
-north = Location.create({name: "north"})
-south = Location.create({name: "south"})
+central = Location.create({name: "Central", address: Faker::Address.street_address})
+north = Location.create({name: "North", address: Faker::Address.street_address})
+south = Location.create({name: "South", address: Faker::Address.street_address})
 
 # Tutors
 t1 = Tutor.create({name: Faker::Name.name, location_id: central.id})
