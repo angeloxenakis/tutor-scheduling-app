@@ -1,4 +1,4 @@
-class Campus < ApplicationRecord
+class Location < ApplicationRecord
     has_many :tutors
     has_many :appointments, through: :tutors
     has_many :students, through: :appointments
