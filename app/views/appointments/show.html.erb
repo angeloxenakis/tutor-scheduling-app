@@ -1,0 +1,27 @@
+<h1>Appointments --> Appointment Details</h1>
+<hr>
+
+<strong>Student: </strong><%= @appointment.student.name.capitalize %><br><br>
+
+<strong>Location: </strong><%= @appointment.location.name.capitalize %><br><br>
+
+<strong>Tutor: </strong><%= @appointment.tutor.name.capitalize %><br><br>
+
+<strong>Subject: </strong><%= @appointment.subject.name.capitalize %><br><br>
+
+<strong>Date: </strong><br><br>
+
+<strong>Time: </strong><br><br>
+
+<form method="GET" action="/appointments/<%=@appointment.id%>/edit">
+    <input type="submit" value="Edit Appointment">
+</form><br>
+
+<form method="POST" action="/appointments/<%=@appointment.id%>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete">
+</form><br><br><br>
+
+<form method="GET" action="/appointments">
+    <input type="submit" value="<-- Back to Appointments">
+</form>

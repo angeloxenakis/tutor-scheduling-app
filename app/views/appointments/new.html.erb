@@ -1,0 +1,20 @@
+<h1>Appointments --> Create New Appointment</h1>
+<hr>
+
+<h3><em>Fill out the information below to create a new appointment</em></h3>
+
+<%= form_for @appointment do |f|%>
+    <%= f.label "Student:" %>
+    <%= f.collection_select :student_id, @students, :id, :name%><br><br>
+    <%= f.label "Location: " %>
+    <%= f.collection_select :location_id, @locations, :id, :name%><br><br>
+    <%= f.label "Tutor: " %>
+    <%= f.collection_select :tutor_id, @tutors, :id, :name%><br><br>
+    <%= f.label "Subject: " %>
+    <%= f.collection_select :subject_id, @subjects, :id, :name%><br><br>
+    <%= f.submit %>
+<%end%><br><br>
+
+<form method="GET" action="/appointments">
+    <input type="submit" value="Cancel">
+</form>
