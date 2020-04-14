@@ -1,4 +1,7 @@
-<h1><%=@subject.name%></h1>
+<h1>Subjects</h1>
+<strong>Subjects --> Subject Details</strong>
+
+<%=@subject.name%>
 
 <ul>
     <% @subject.tutors.each do |tutor|%>
@@ -18,3 +21,5 @@
 <form method="GET" action="/subjects">
     <input type="submit" value="<-- Back to Subjects">
 </form>
+
+<br><hr>
