@@ -8,7 +8,7 @@
     <%= f.collection_select :location_id, @locations, :id, :name%><br><br>
  
     <%= f.label "Select a Subject"%><br>
-    <%= f.collection_checkbox :subject_id, @subjects, :id, :name%><br><br>
+    <%= f.collection_check_boxes :subject_ids, @subjects, :id, :name%><br><br>
 
     <%=f.submit %>
 <%end%>
