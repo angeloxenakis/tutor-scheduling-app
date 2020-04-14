@@ -1,4 +1,8 @@
-<h1><%=@student.name%></h1>
+<h1>Students</h1>
+<strong>Students --> Student Details</strong>
+<hr>
+
+<%=@student.name%>
 
 <form method="GET" action="/students/<%=@student.id%>/edit">
     <input type="submit" value="Edit Student">
@@ -12,3 +16,5 @@
 <form method="GET" action="/students">
     <input type="submit" value="<-- Back to Students">
 </form>
+
+<br><hr>
