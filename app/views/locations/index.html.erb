@@ -1,5 +1,14 @@
+<h1>Locations</h1>
+<hr>
+
+<h3><em>Click on a location below to view its details</em></h3>
+
 <ul>
     <% @locations.each do |location| %>
-        <li><%= link_to location.name, location_path(location)%></li>
+        <li><%= link_to location.name.capitalize, location_path(location)%></li>
     <%end%>
 </ul>
+
+<form method="GET" action="locations/new">
+    <input type="submit" value="+ Create New Location">
+</form>

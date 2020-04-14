@@ -15,8 +15,6 @@ class TutorsController < ApplicationController
     end
 
     def create 
-        @subjects = Subject.all
-        @tutor_subjects = TutorSubject.all
         @tutor = Tutor.create(tutor_params)
         redirect_to tutor_path(@tutor)
     end
@@ -42,6 +40,6 @@ class TutorsController < ApplicationController
     private
 
     def tutor_params
-        params.required(:tutor).permit(:name, :location_id)
+        params.required(:tutor).permit(:name, :location_id, subject_ids: [])
     end
 end

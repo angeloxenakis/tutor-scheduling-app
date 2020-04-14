@@ -1,0 +1,14 @@
+<h1> All Appointments</h1>
+<hr>
+
+<h3><em>Click on an appointment below to view its details</em></h3>
+
+<ul>
+    <% @appointments.each do |appointment| %>
+        <li><%= link_to appointment, appointment_path(appointment)%></li>
+    <%end%>
+</ul>
+
+<form method="GET" action="appointments/new">
+    <input type="submit" value="+ Create New Appointment">
+</form>

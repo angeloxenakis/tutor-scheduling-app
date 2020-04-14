@@ -10,12 +10,13 @@ Tutor.destroy_all
 Student.destroy_all
 Subject.destroy_all
 TutorSubject.destroy_all
+Appointment.destroy_all
 
 
 # Location
-central = Location.create({name: "central"})
-north = Location.create({name: "north"})
-south = Location.create({name: "south"})
+central = Location.create({name: "Central", address: Faker::Address.street_address})
+north = Location.create({name: "North", address: Faker::Address.street_address})
+south = Location.create({name: "South", address: Faker::Address.street_address})
 
 # Tutors
 t1 = Tutor.create({name: Faker::Name.name, location_id: central.id})
@@ -54,3 +55,21 @@ TutorSubject.create({tutor_id: t5.id, subject_id: math.id})
 TutorSubject.create({tutor_id: t6.id, subject_id: science.id})
 TutorSubject.create({tutor_id: t7.id, subject_id: history.id})
 TutorSubject.create({tutor_id: t8.id, subject_id: english.id})
+
+# Appointments
+
+Appointment.create({student_id: s1.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
+Appointment.create({student_id: s1.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
+Appointment.create({student_id: s2.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
+Appointment.create({student_id: s2.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
+Appointment.create({student_id: s2.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
+Appointment.create({student_id: s3.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
+Appointment.create({student_id: s3.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
+Appointment.create({student_id: s4.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
+Appointment.create({student_id: s4.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
+Appointment.create({student_id: s4.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
+Appointment.create({student_id: s5.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
+Appointment.create({student_id: s5.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
+Appointment.create({student_id: s6.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
+Appointment.create({student_id: s6.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
+Appointment.create({student_id: s6.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})

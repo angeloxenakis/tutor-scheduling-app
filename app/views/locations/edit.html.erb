@@ -1,0 +1,14 @@
+<h1>Locations --> Location Details --> Edit Location</h1>
+<hr>
+
+<h3><em>Edit the information below to update a location</em></h3>
+
+<%= form_for @location do |f|%>
+    <%= f.label "Location Name:" %>
+    <%= f.text_field :name %><br><br>
+    <%= f.submit %>
+<%end%><br><br>
+
+<form method="GET" action="/locations">
+    <input type="submit" value="Cancel">
+</form>
