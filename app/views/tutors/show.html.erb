@@ -1,21 +1,24 @@
-<h1><%=@tutor.name%></h1>
-<h3><%=@tutor.location.name%></h3>
+<div class="container">
 
-<ul>
-    <% @tutor.subjects.each do |subject|%>
-        <li><%=subject.name%></li>
-    <%end%>
-</ul>
+    <h1><%=@tutor.name%></h1>
+    <h3><%=@tutor.location.name%></h3>
 
-<form method="GET" action="/tutors/<%=@tutor.id%>/edit">
-    <input type="submit" value="Edit Tutor">
-</form><br>
+    <ul>
+        <% @tutor.subjects.each do |subject|%>
+            <li><%=subject.name%></li>
+        <%end%>
+    </ul>
 
-<form method="POST" action="/tutors/<%=@tutor.id%>">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete">
-</form><br><br><br>
+    <form method="GET" action="/tutors/<%=@tutor.id%>/edit">
+        <input type="submit" value="Edit Tutor">
+    </form><br>
 
-<form method="GET" action="/tutors">
-    <input type="submit" value="<-- Back to Tutors">
-</form>
+    <form method="POST" action="/tutors/<%=@tutor.id%>">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete">
+    </form><br><br><br>
+
+    <form method="GET" action="/tutors">
+        <input type="submit" value="<-- Back to Tutors">
+    </form>
+</div>
