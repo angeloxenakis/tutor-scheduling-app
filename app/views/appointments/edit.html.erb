@@ -1,23 +1,39 @@
-<h1>Appointments</h1>
-<strong>Appointments --> Appointment Details --> Edit Appointment</strong>
-<hr>
+<head>
+</head>
+<body>
+    <h1>Appointments</h1>
 
-<h3><em>Edit the information below to update an appointment</em></h3>
+    <hr>
 
-<%= form_for @appointment do |f|%>
-    <%= f.label "Student:" %>
-    <%= f.collection_select :student_id, @students, :id, :name%><br><br>
-    <%= f.label "Location: " %>
-    <%= f.collection_select :location_id, @locations, :id, :name%><br><br>
-    <%= f.label "Tutor: " %>
-    <%= f.collection_select :tutor_id, @tutors, :id, :name%><br><br>
-    <%= f.label "Subject: " %>
-    <%= f.collection_select :subject_id, @subjects, :id, :name%><br><br>
-    <%= f.submit %>
-<%end%><br><br>
+    <div class="container">
+        <h4><strong><em>Edit Appointment Details</em></strong></h4><br>
 
-<form method="GET" action="/appointments">
-    <input type="submit" value="Cancel">
-</form>
+        <%= form_for @appointment do |f|%>
+            <%= f.label "Student:" %>
+            <%= f.collection_select :student_id, @students, :id, :name%><br><br>
+            <%= f.label "Location: " %>
+            <%= f.collection_select :location_id, @locations, :id, :name%><br><br>
+            <%= f.label "Tutor: " %>
+            <%= f.collection_select :tutor_id, @tutors, :id, :name%><br><br>
+            <%= f.label "Subject: " %>
+            <%= f.collection_select :subject_id, @subjects, :id, :name%><br><br>
 
-<br><hr>
+            <hr><br>
+
+            <%= f.submit %>
+        <%end%><br><br>
+
+        <form method="GET" action="/appointments">
+            <input type="submit" value="Cancel">
+        </form><br>
+
+        <hr><br>
+
+        <form method="POST" action="/appointments/delete">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete Appointment">
+        </form><br>
+
+        <hr>
+    </div>
+</body>
