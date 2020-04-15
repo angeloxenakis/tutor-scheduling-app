@@ -2,7 +2,7 @@
 <strong>Appointments --> Create New Appointment</strong>
 <hr>
 
-<h3><em>Fill out the information below to create a new appointment</em></h3>
+<h3><em>Fill out the information below to book a new appointment</em></h3>
 
 <%= form_for @appointment do |f|%>
     <%= f.label "Student:" %>
@@ -19,7 +19,7 @@
 
     <%= f.label "Time: " %>
     <%= f.time_field :time%><br><br>
-    <%= f.submit %>
+    <%= f.submit "Book Appointment" %>
 <%end%><br><br>
 
 <form method="GET" action="/appointments">

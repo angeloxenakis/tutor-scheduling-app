@@ -13,10 +13,9 @@
     <input type="submit" value="Edit Subject">
 </form><br>
 
-<form method="POST" action="/subjects/<%=@subject.id%>">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete">
-</form><br><br><br>
+<form method="GET" action="../appointments/new">
+    <input type="submit" value="Book Appointment">
+</form><br><br>
 
 <form method="GET" action="/subjects">
     <input type="submit" value="<-- Back to Subjects">
