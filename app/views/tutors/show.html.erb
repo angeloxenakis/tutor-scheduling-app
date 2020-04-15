@@ -1,29 +1,38 @@
-<h1>Tutors</h1>
-<strong>Tutors --> Tutor Details</strong>
-<hr>
+<head>
+</head>
+<body>
+    <h1>Tutors</h1>
 
-<div class="container">
+    <hr>
 
-    <h1><%=@tutor.name%></h1>
-    <h3><%=@tutor.location.name%></h3>
+    <div class="container">
+        <h4><strong><em>Tutor Details</em></strong></h4><br>
 
-    <ul>
-        <% @tutor.subjects.each do |subject|%>
-            <li><%=subject.name%></li>
-        <%end%>
-    </ul>
+        <strong>Name: </strong><%=@tutor.name%><br><br>
 
-    <form method="GET" action="/tutors/<%=@tutor.id%>/edit">
-        <input type="submit" value="Edit Tutor">
-    </form><br>
+        <strong>Location: </strong><%=@tutor.location.name%><br><br>
 
-    <form method="GET" action="../appointments/new">
-        <input type="submit" value="Book Appointment">
-    </form><br><br>
+        <strong>Subjects: </strong><br>
+        <ul>
+            <% @tutor.subjects.uniq.each do |subject|%>
+                <li><%=subject.name%></li>
+            <%end%>
+        </ul><br>
 
-    <form method="GET" action="/tutors">
-        <input type="submit" value="<-- Back to Tutors">
-    </form>
+        <hr><br>
 
-    <br><hr>
-</div>
+        <form method="GET" action="/tutors/<%=@tutor.id%>/edit">
+            <input type="submit" value="Edit Tutor">
+        </form><br>
+
+        <form method="GET" action="../appointments/new">
+            <input type="submit" value="Book Appointment">
+        </form><br><br>
+
+        <form method="GET" action="/tutors">
+            <input type="submit" value="<-- Back to Tutors">
+        </form>
+
+        <br><hr>
+    </div>
+</body>

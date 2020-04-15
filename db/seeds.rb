@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 Location.destroy_all
 Tutor.destroy_all
 Student.destroy_all
@@ -12,64 +5,33 @@ Subject.destroy_all
 TutorSubject.destroy_all
 Appointment.destroy_all
 
-
-# Location
+# Locations
 central = Location.create({name: "Central", address: Faker::Address.street_address})
 north = Location.create({name: "North", address: Faker::Address.street_address})
 south = Location.create({name: "South", address: Faker::Address.street_address})
 
 # Tutors
-t1 = Tutor.create({name: Faker::Name.name, location_id: central.id})
-t2 = Tutor.create({name: Faker::Name.name, location_id: central.id})
-t3 = Tutor.create({name: Faker::Name.name, location_id: central.id})
-t4 = Tutor.create({name: Faker::Name.name, location_id: central.id})
-t5 = Tutor.create({name: Faker::Name.name, location_id: north.id})
-t6 = Tutor.create({name: Faker::Name.name, location_id: north.id})
-t7 = Tutor.create({name: Faker::Name.name, location_id: south.id})
-t8 = Tutor.create({name: Faker::Name.name, location_id: south.id})
+12.times { Tutor.create({name: Faker::Name.name, location_id: Location.all.sample.id}) }
 
 # Students
-s1 = Student.create({name: Faker::Name.name})
-s2 = Student.create({name: Faker::Name.name})
-s3 = Student.create({name: Faker::Name.name})
-s4 = Student.create({name: Faker::Name.name})
-s5 = Student.create({name: Faker::Name.name})
-s6 = Student.create({name: Faker::Name.name})
+30.times { Student.create({name: Faker::Name.name}) }
 
-# Subject
-math = Subject.create({name: "math"})
-science = Subject.create({name: "science"})
-english = Subject.create({name: "english"})
-history = Subject.create({name: "history"})
+# Subjects
+math = Subject.create({name: "Math"})
+science = Subject.create({name: "Science"})
+english = Subject.create({name: "English"})
+history = Subject.create({name: "History"})
+business = Subject.create({name: "Business"})
+computer_science = Subject.create({name: "Computer Science"})
 
 # Tutor Subjects
-TutorSubject.create({tutor_id: t1.id, subject_id: math.id})
-TutorSubject.create({tutor_id: t1.id, subject_id: science.id})
-TutorSubject.create({tutor_id: t2.id, subject_id: english.id})
-TutorSubject.create({tutor_id: t2.id, subject_id: history.id})
-TutorSubject.create({tutor_id: t3.id, subject_id: science.id})
-TutorSubject.create({tutor_id: t3.id, subject_id: history.id})
-TutorSubject.create({tutor_id: t4.id, subject_id: english.id})
-TutorSubject.create({tutor_id: t4.id, subject_id: math.id})
-TutorSubject.create({tutor_id: t5.id, subject_id: math.id})
-TutorSubject.create({tutor_id: t6.id, subject_id: science.id})
-TutorSubject.create({tutor_id: t7.id, subject_id: history.id})
-TutorSubject.create({tutor_id: t8.id, subject_id: english.id})
+24.times { TutorSubject.create({tutor_id: Tutor.all.sample.id, subject_id: Subject.all.sample.id}) }
 
 # Appointments
-
-Appointment.create({student_id: s1.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
-Appointment.create({student_id: s1.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
-Appointment.create({student_id: s2.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
-Appointment.create({student_id: s2.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
-Appointment.create({student_id: s2.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
-Appointment.create({student_id: s3.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
-Appointment.create({student_id: s3.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
-Appointment.create({student_id: s4.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
-Appointment.create({student_id: s4.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
-Appointment.create({student_id: s4.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
-Appointment.create({student_id: s5.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
-Appointment.create({student_id: s5.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
-Appointment.create({student_id: s6.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
-Appointment.create({student_id: s6.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
-Appointment.create({student_id: s6.id, tutor_id: t1.id, subject_id: math.id, location_id: central.id})
+120.times { 
+    Appointment.create({
+        student_id: Student.all.sample.id, 
+        tutor_id: Tutor.all.sample.id, 
+        subject_id: Subject.all.sample.id, 
+        location_id: Location.all.sample.id}) 
+}

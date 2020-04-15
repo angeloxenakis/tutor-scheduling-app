@@ -1,14 +1,23 @@
-<h1>Tutors</h1>
-<hr>
+<head>
+</head>
+<body>
+    <h1>Tutors</h1>
 
-<ul>
-<% @tutors.each do |tutor|%>
-    <li><%= link_to tutor.name, tutor_path(tutor) %></li>
-<% end %>
-</ul>
+    <hr>
 
-<form method="GET" action="tutors/new">
-    <input type="submit" value="+ Create New Tutor">
-</form>
+    <div class="container">
+        <h4><strong><em>All Tutors</em></strong></h4>
+        <em>Click on a Tutor below to view its details</em><br><br><br>
+        <ul>
+        <% @tutors.each do |tutor|%>
+            <li><%= link_to tutor.name, tutor_path(tutor) %></li>    
+        <% end %>
+        </ul><br><br>
 
-<br><hr>
+        <form method="GET" action="tutors/new">
+            <input type="submit" value="+ Create New Tutor">
+        </form><br><br>
+
+        <hr>
+    </div>
+</body>
