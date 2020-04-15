@@ -33,5 +33,8 @@ computer_science = Subject.create({name: "Computer Science"})
         student_id: Student.all.sample.id, 
         tutor_id: Tutor.all.sample.id, 
         subject_id: Subject.all.sample.id, 
-        location_id: Location.all.sample.id}) 
+        location_id: Location.all.sample.id,
+        date: Faker::Date.in_date_period(month: 2),
+        time: Faker::Time.forward(days: 23, period: :morning)
+    }) 
 }
