@@ -19,11 +19,17 @@
             <%end%>
         </ul><br>
 
-        <strong>Tutors:</strong>
-
+        <strong><%=@location.name%>'s Tutors:</strong>
         <ul>
             <%@location.tutors.each do |tutor|%>
                 <li><%= link_to tutor.name, tutor_path(tutor) %></li>
+            <%end%>
+        </ul><br>
+
+        <strong><%=@location.name%>'s Appointments:</strong>
+        <ul>
+            <%@location.appointments.each do |appointment|%>
+                <li><%= link_to appointment, appointment_path(appointment) %></li>
             <%end%>
         </ul><br>
 
