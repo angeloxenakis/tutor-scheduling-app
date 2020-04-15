@@ -10,19 +10,27 @@
 
         <strong>Name: </strong><%=@student.name%><br><br>
 
-        <strong><%= @student.name %>'s Appointments:</strong>
-        <ul>
+        <strong><%= @student.name %>'s Appointments:</strong><br><br>
+        <table style="width:100%">
+            <tr>
+                <th height="50">Location</th>
+                <th height="50">Subject</th>
+                <th height="50">Tutor</th>
+                <th height="50">Date</th>
+                <th height="50">Time</th>
+                <th height="50"> </th>
+            </tr>
             <% @student.appointments.each do |appointment| %>
-                <li><%= link_to appointment, appointment_path(appointment) %></li>
+                <tr>
+                    <td width="16%"><%=appointment.location.name%></td>
+                    <td width="16%"><%=appointment.subject.name%></td>
+                    <td width="16%"><%=appointment.tutor.name%></td>
+                    <td width="16%"><%=appointment.date%></td>
+                    <td width="16%"><%=appointment.time.strftime("%H:%M")%></td>
+                    <td width="16%", height="30"><%=link_to "View Appt", appointment_path(appointment)%></td>
+                </tr>
             <% end %>
-        </ul><br><br>
-
-        <strong><%= @student.name %>'s Tutors:</strong>
-        <ul>
-            <% @student.tutors.each do |tutor| %>
-                <li><%= link_to tutor.name, tutor_path(tutor) %></li>
-            <% end %>
-        </ul><br>
+        </table><br><br>
 
         <hr><br>
 

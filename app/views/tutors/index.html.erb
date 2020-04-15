@@ -7,7 +7,7 @@
 
     <div class="container">
         <h4><strong><em>All Tutors</em></strong></h4>
-        <em>Click on a Tutor below to view its details</em><br><br><br>
+        <em>Click on a Tutor below to view their details</em><br><br><br>
         <ul>
         <% @tutors.each do |tutor|%>
             <li><%= link_to tutor.name, tutor_path(tutor) %></li>    
