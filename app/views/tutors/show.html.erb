@@ -14,7 +14,7 @@
 
         <strong>Subjects: </strong><br>
         <ul>
-            <% @tutor.subjects.each do |subject|%>
+            <% @tutor.subjects.uniq.each do |subject|%>
                 <li><%=subject.name%></li>
             <%end%>
         </ul><br>
