@@ -12,10 +12,17 @@
 
         <strong>Location: </strong><%=@tutor.location.name%><br><br>
 
-        <strong>Subjects: </strong><br>
+        <strong><%=@tutor.name%>'s Subjects: </strong><br>
         <ul>
             <% @tutor.subjects.uniq.each do |subject|%>
                 <li><%=subject.name%></li>
+            <%end%>
+        </ul><br>
+
+        <strong><%=@tutor.name%>'s Appointments: </strong><br>
+        <ul>
+            <% @tutor.appointments.each do |appointment|%>
+                <li><%=link_to appointment, appointment_path(appointment)%></li>
             <%end%>
         </ul><br>
 

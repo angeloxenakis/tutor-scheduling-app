@@ -10,6 +10,20 @@
 
         <strong>Name: </strong><%=@student.name%><br><br>
 
+        <strong><%= @student.name %>'s Appointments:</strong>
+        <ul>
+            <% @student.appointments.each do |appointment| %>
+                <li><%= link_to appointment, appointment_path(appointment) %></li>
+            <% end %>
+        </ul><br><br>
+
+        <strong><%= @student.name %>'s Tutors:</strong>
+        <ul>
+            <% @student.tutors.each do |tutor| %>
+                <li><%= link_to tutor.name, tutor_path(tutor) %></li>
+            <% end %>
+        </ul><br>
+
         <hr><br>
 
         <form method="GET" action="/students/<%=@student.id%>/edit">
