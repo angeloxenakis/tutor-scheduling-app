@@ -13,6 +13,12 @@
     <%= f.collection_select :tutor_id, @tutors, :id, :name%><br><br>
     <%= f.label "Subject: " %>
     <%= f.collection_select :subject_id, @subjects, :id, :name%><br><br>
+
+    <%= f.label "Date: " %>
+    <%= f.date_field :date%><br><br>
+
+    <%= f.label "Time: " %>
+    <%= f.time_field :time%><br><br>
     <%= f.submit %>
 <%end%><br><br>
 
