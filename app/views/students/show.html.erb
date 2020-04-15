@@ -2,7 +2,11 @@
 <strong>Students --> Student Details</strong>
 <hr>
 
-<%=@student.name%>
+<%=@student.name%><br><br>
+
+<form method="GET" action="../appointments/new">
+    <input type="submit" value="+ Create New Appointment">
+</form><br>
 
 <form method="GET" action="/students/<%=@student.id%>/edit">
     <input type="submit" value="Edit Student">

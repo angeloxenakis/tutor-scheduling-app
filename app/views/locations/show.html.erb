@@ -1,37 +1,42 @@
-<h1>Locations</h1>
-<strong>Locations --> Location Details</strong>
-<hr>
+<head>
+</head>
+<body>
+    <h2>Locations</h2>
 
-<h2>Location: <%= @location.name.capitalize %></h2>
+    <hr>
 
-<strong>Address: </strong><%= @location.address %><br><br>
+    <div class="container">
+        <h4><strong><em>Location Details</em></strong></h4><br>
 
-<strong>Subjects: </strong>
-<ul>
-    <%@location.subjects.uniq.each do |subject|%>
-        <li><%= subject.name %></li>
-    <%end%>
-</ul><br>
+        <strong>Name: </strong> <%= @location.name.capitalize %><br><br>
 
-<strong>Tutors:</strong>
+        <strong>Address: </strong><%= @location.address %><br><br>
 
-<ul>
-    <%@location.tutors.each do |tutor|%>
-        <li><%= link_to tutor.name, tutor_path(tutor) %></li>
-    <%end%>
-</ul><br>
+        <strong>Subjects: </strong>
+        <ul>
+            <%@location.subjects.uniq.each do |subject|%>
+                <li><%= link_to subject.name, subject_path(subject) %></li>
+            <%end%>
+        </ul><br>
 
-<form method="GET" action="/locations/<%=@location.id%>/edit">
-    <input type="submit" value="Edit Location">
-</form><br>
+        <strong>Tutors:</strong>
 
-<form method="POST" action="/locations/<%=@location.id%>">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete">
-</form><br><br><br>
+        <ul>
+            <%@location.tutors.each do |tutor|%>
+                <li><%= link_to tutor.name, tutor_path(tutor) %></li>
+            <%end%>
+        </ul><br>
 
-<form method="GET" action="/locations">
-    <input type="submit" value="<-- Back to Locations">
-</form>
+        <hr><br>
 
-<br><hr>
+        <form method="GET" action="/locations/<%=@location.id%>/edit">
+            <input type="submit" value="Edit Location">
+        </form><br><br>
+
+        <form method="GET" action="/locations">
+            <input type="submit" value="<-- Back to Locations">
+        </form><br><br>
+
+        <hr><br><br>
+    </div>
+</body>
