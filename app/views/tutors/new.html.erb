@@ -1,17 +1,29 @@
-<h1>Tutors</h1>
-<strong>Tutors --> Add New Tutor</strong>
+<head>
+</head>
+<body>
+    <h1>Tutors</h1>
 
-<%= form_for @tutor do |f|%>
-    <%= f.label "Tutor Name"%><br>
-    <%= f.text_field :name%><br><br>
+    <hr>
 
-    <%= f.label "Select a Campus"%><br>
-    <%= f.collection_select :location_id, @locations, :id, :name%><br><br>
- 
-    <%= f.label "Select a Subject"%><br>
-    <%= f.collection_check_boxes :subject_ids, @subjects, :id, :name%><br><br>
+    <div class="container">
+        <h4><strong><em>Create New Tutor</em></strong></h4><br>
+        <%= form_for @tutor do |f|%>
+            <%= f.label "Tutor Name:"%>
+            <%= f.text_field :name%><br><br>
 
-    <%=f.submit %>
-<%end%>
+            <%= f.label "Select a Location:"%>
+            <%= f.collection_select :location_id, @locations, :id, :name%><br><br>
+        
+            <%= f.label "Select a Subjects:"%><br>
+            <%= f.collection_check_boxes :subject_ids, @subjects, :id, :name%><br><br><br>
 
-<br><hr>
+            <%=f.submit %>
+        <%end%><br><br>
+
+        <form method="GET" action="/tutors">
+            <input type="submit" value="Cancel">
+        </form>
+
+        <br><hr>
+    </div>
+</body>
