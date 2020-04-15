@@ -1,22 +1,28 @@
-<div class="container">
 
+<head>
+</head>
+<body>
     <h1>Students</h1>
-    <strong>Student --> Add New Student</strong>
+
     <hr>
 
-    <%= form_for @student do |f|%>
-        <%= f.label "Student Name"%><br>
-        <%= f.text_field :name%><br><br>
+    <div class="container">
+        <h4><strong><em>Create New Student</em></strong></h4><br>
 
-        <%= f.label "Username" %><br>
-        <%= f.text_field :username, placeholder: "Username" %><br><br>
+        <%= form_for @student do |f|%>
+            <%= f.label "Student Name"%><br>
+            <%= f.text_field :name%><br><br>
 
-        <%= f.label "password" %><br>
-        <%= f.password_field :password, placeholder: "Password" %><br><br>
+            <hr><br>
 
-        <%= f.label "Confirm Password" %><br>
-        <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %><br><br>
+            <%=f.submit %>
+        <%end%><br><br>
 
-        <%= f.submit "Create Account" %>
-    <%end%>
-</div>
+        <form method="GET" action="/students">
+            <input type="submit" value="Cancel">
+        </form>
+
+        <br><hr>
+    </div>
+</body>
+

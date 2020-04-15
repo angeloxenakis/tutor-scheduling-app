@@ -1,14 +1,23 @@
-<h1>Students</h1>
-<hr>
+<head>
+</head>
+<body>
+    <h2>Students</h2>
 
-<ul>
-    <% @students.each do |student|%>
-        <li><%= link_to student.name, student_path(student) %></li>
-    <% end %>
-</ul>
+    <hr>
 
-<form method="GET" action="/students/new">
-    <input type="submit" value="+ Create New Student">
-</form>
+    <div class="container">
+        <h4><strong><em>All Students</em></strong></h4>
+        <em>Click on a student below to view their details</em><br><br><br>
+        <ul>
+            <% @students.each do |student|%>
+                <li><%= link_to student.name, student_path(student) %></li>
+            <% end %>
+        </ul><br><br>
 
-<br><hr>
+        <form method="GET" action="/students/new">
+            <input type="submit" value="+ Create New Student">
+        </form>
+
+        <br><hr>
+    </div>
+</body>

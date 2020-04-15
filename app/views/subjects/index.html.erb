@@ -1,14 +1,23 @@
-<h1>Subjects</h1>
-<hr>
+<head>
+</head>
+<body>
+    <h1>Subjects</h1>
 
-<ul>
-    <% @subjects.each do |subject|%>
-        <li><%= link_to subject.name, subject_path(subject) %></li>
-    <% end %>
-</ul>
+    <hr>
 
-<form method="GET" action="/subjects/new">
-    <input type="submit" value="+ Create New Subject">
-</form>
+    <div class="container">
+        <h4><strong><em>All Subjects</em></strong></h4>
+        <em>Click on a subject below to view its details</em><br><br><br>
 
-<br><hr>
+        <ul>
+            <% @subjects.each do |subject|%>
+                <li><%= link_to subject.name, subject_path(subject) %></li>
+            <% end %>
+        </ul><br><br>
+
+        <form method="GET" action="/subjects/new">
+            <input type="submit" value="+ Create New Subject">
+        </form><br><br>
+
+        <hr><br>
+</body>
