@@ -1,24 +1,36 @@
-<h1>Subjects</h1>
-<strong>Subjects --> Subject Details</strong>
+<head>
+</head>
+<body>
+    <h1>Subjects</h1>
 
-<%=@subject.name%>
+    <hr>
 
-<ul>
-    <% @subject.tutors.each do |tutor|%>
-        <li><%=tutor.name%></li>
-    <%end%>
-</ul>
+    <div class="container">
+    <h4><strong><em>Subject Details</em></strong></h4><br>
+    <strong>Name: </strong><%=@subject.name.capitalize%><br><br>
 
-<form method="GET" action="/subjects/<%=@subject.id%>/edit">
-    <input type="submit" value="Edit Subject">
-</form><br>
+    <strong>Tutors Teaching <%=@subject.name.capitalize%>: </strong><br><br>
 
-<form method="GET" action="../appointments/new">
-    <input type="submit" value="Book Appointment">
-</form><br><br>
+    <ul>
+        <% @subject.tutors.each do |tutor|%>
+            <li><%=tutor.name%></li>
+        <%end%>
+    </ul><br>
 
-<form method="GET" action="/subjects">
-    <input type="submit" value="<-- Back to Subjects">
-</form>
+    <hr><br>
 
-<br><hr>
+    <form method="GET" action="/subjects/<%=@subject.id%>/edit">
+        <input type="submit" value="Edit Subject">
+    </form><br>
+
+    <form method="GET" action="../appointments/new">
+        <input type="submit" value="Book Appointment">
+    </form><br><br>
+
+    <form method="GET" action="/subjects">
+        <input type="submit" value="<-- Back to Subjects">
+    </form>
+
+    <br><hr>
+    </div>
+</body>

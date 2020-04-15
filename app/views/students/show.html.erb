@@ -1,19 +1,29 @@
-<h1>Students</h1>
-<strong>Students --> Student Details</strong>
-<hr>
+<head>
+</head>
+<body>
+    <h2>Students</h2> 
 
-<%=@student.name%><br><br>
+    <hr>
 
-<form method="GET" action="/students/<%=@student.id%>/edit">
-    <input type="submit" value="Edit Student">
-</form><br>
+    <div class="container">
+        <h4><strong><em>Student Details</em></strong></h4><br>
 
-<form method="GET" action="../appointments/new">
-    <input type="submit" value="Book Appointment">
-</form><br><br>
+        <strong>Name: </strong><%=@student.name%><br><br>
 
-<form method="GET" action="/students">
-    <input type="submit" value="<-- Back to Students">
-</form>
+        <hr><br>
 
-<br><hr>
+        <form method="GET" action="/students/<%=@student.id%>/edit">
+            <input type="submit" value="Edit Student">
+        </form><br>
+
+        <form method="GET" action="../appointments/new">
+            <input type="submit" value="Book Appointment">
+        </form><br><br>
+
+        <form method="GET" action="/students">
+            <input type="submit" value="<-- Back to Students">
+        </form>
+
+        <br><hr>
+    </div>
+</body>
