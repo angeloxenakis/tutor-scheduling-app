@@ -1,17 +1,33 @@
-<h1>Students</h1>
-<strong>Students --> Edit Student</strong>
-<hr>
+<head>
+</head>
+<body>
+    <h1>Students</h1>
 
-<%= form_for @student do |f|%>
-    <%= f.label "Student Name"%><br>
-    <%= f.text_field :name%><br><br>
+    <hr>
 
-    <%=f.submit %><br><br>
-    
-    <form method="POST" action="/students/<%=@student.id%>">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="Delete">
-</form><br><br><br>
-<%end%>
+    <div class="container">
+        <h4><strong><em>Edit Student Details</em></strong></h4><br>
 
-<br><hr>
+        <%= form_for @student do |f|%>
+            <%= f.label "Student Name"%><br>
+            <%= f.text_field :name%><br><br>
+
+            <hr><br>
+
+            <%=f.submit %><br><br><br>
+
+            <form method="GET" action="/students/<%=@student.id%>">
+                <input type="submit" value="Cancel">
+            </form><br>
+
+            <hr><br>
+            
+            <form method="POST" action="/students/<%=@student.id%>">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="Delete Student">
+            </form><br>
+        <%end%>
+
+        <hr><br>
+    </div>
+</body>

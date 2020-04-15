@@ -1,12 +1,26 @@
-<h1>Students</h1>
-<strong>Student --> Add New Student</strong>
-<hr>
+<head>
+</head>
+<body>
+    <h1>Students</h1>
 
-<%= form_for @student do |f|%>
-    <%= f.label "Student Name"%><br>
-    <%= f.text_field :name%><br><br>
+    <hr>
 
-    <%=f.submit %>
-<%end%>
+    <div class="container">
+        <h4><strong><em>Create New Student</em></strong></h4><br>
 
-<br><hr>
+        <%= form_for @student do |f|%>
+            <%= f.label "Student Name"%><br>
+            <%= f.text_field :name%><br><br>
+
+            <hr><br>
+
+            <%=f.submit %>
+        <%end%><br><br>
+
+        <form method="GET" action="/students">
+            <input type="submit" value="Cancel">
+        </form>
+
+        <br><hr>
+    </div>
+</body>
