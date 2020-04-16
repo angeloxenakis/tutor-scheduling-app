@@ -11,7 +11,8 @@ north = Location.create({name: "North", address: Faker::Address.street_address})
 south = Location.create({name: "South", address: Faker::Address.street_address})
 
 # Tutors
-12.times { Tutor.create({name: Faker::Name.name, location_id: Location.all.sample.id}) }
+# 12.times { Tutor.create({name: Faker::Name.name, location_id: Location.all.sample.id}) }
+Tutor.create({name: Faker::Name.name, location_id: Location.all.sample.id, username: "Steven", password: "flatiron"})
 
 # Students
 
