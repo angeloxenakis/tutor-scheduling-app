@@ -11,6 +11,7 @@ north = Location.create({name: "North", address: Faker::Address.street_address})
 south = Location.create({name: "South", address: Faker::Address.street_address})
 
 # Tutors
+t1 = Tutor.create({name: Faker::Name.name, username: "ruthobe", password: "ruth@tutor"})
 12.times { Tutor.create({name: Faker::Name.name, location_id: Location.all.sample.id}) }
 
 # Students
@@ -33,17 +34,3 @@ history = Subject.create({name: "History"})
 business = Subject.create({name: "Business"})
 computer_science = Subject.create({name: "Computer Science"})
 
-# Tutor Subjects
-24.times { TutorSubject.create({tutor_id: Tutor.all.sample.id, subject_id: Subject.all.sample.id}) }
-
-# Appointments
-120.times { 
-    Appointment.create({
-        student_id: Student.all.sample.id, 
-        tutor_id: Tutor.all.sample.id, 
-        subject_id: Subject.all.sample.id, 
-        location_id: Location.all.sample.id,
-        date: Faker::Date.in_date_period(month: 2),
-        time: Faker::Time.forward(days: 23, period: :morning)
-    }) 
-}

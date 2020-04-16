@@ -17,9 +17,9 @@ class StudentsController < ApplicationController
     end
 
 
-    # def index 
-    #     @students = Student.all
-    # end
+    def index 
+        
+    end
 
 
     def new
@@ -31,7 +31,7 @@ class StudentsController < ApplicationController
         if @student.valid?
             @student.save
             redirect_to @student
-          else  
+          else 
             redirect_to new_student_path
           end
     end

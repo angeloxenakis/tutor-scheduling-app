@@ -5,20 +5,27 @@
 <h3><em>Fill out the information below to book a new appointment</em></h3>
 
 <%= form_for @appointment do |f|%>
-    <%= f.label "Student:" %>
-    <%= f.collection_select :student_id, @students, :id, :name%><br><br>
+    
     <%= f.label "Location: " %>
     <%= f.collection_select :location_id, @locations, :id, :name%><br><br>
+    <%= f.error_messages(@appointment, :location) if flash[:appointment_attributes]%>
+
     <%= f.label "Tutor: " %>
     <%= f.collection_select :tutor_id, @tutors, :id, :name%><br><br>
+    <%= f.error_messages(@appointment, :tutor) if flash[:appointment_attributes]%>
+
     <%= f.label "Subject: " %>
     <%= f.collection_select :subject_id, @subjects, :id, :name%><br><br>
+    <%= f.error_messages(@appointment, :subject) if flash[:appointment_attributes]%>
 
     <%= f.label "Date: " %>
     <%= f.date_field :date%><br><br>
+    <%= f.error_messages(@appointment, :date) if flash[:appointment_attributes]%>
 
     <%= f.label "Time: " %>
     <%= f.time_field :time%><br><br>
+    <%= f.error_messages(@appointment, :time) if flash[:appointment_attributes]%>
+
     <%= f.submit "Book Appointment" %>
 <%end%><br><br>
 
