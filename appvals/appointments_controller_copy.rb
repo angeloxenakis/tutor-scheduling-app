@@ -1,7 +1,6 @@
 class AppointmentsController < ApplicationController 
     def index 
-        student = Student.find(session[:student_id])
-        @appointments = student.appointments
+        @appointments = Appointment.all
     end
 
     def show
@@ -9,11 +8,7 @@ class AppointmentsController < ApplicationController
     end
 
     def new
-        if(flash[:appointment_attributes] != nil)
-            @appointment = Appointment.new(flash[:appointment_attributes])
-        else
-            @appointment = Appointment.new
-        end
+        @appointment = Appointment.new
         @students = Student.all
         @locations = Location.all
         @tutors = Tutor.all
@@ -21,17 +16,14 @@ class AppointmentsController < ApplicationController
     end
 
     def create 
-        @appointment = Appointment.new(appointment_params)
-        @appointment.student = @current_student
+        @appointment = Appointment.create(appointment_params)
         if( @appointment.valid? )
-            @appointment.save
-            redirect_to appointment_path(@appointment)
+            redirect_to ("/appointments/#{@appointment.id}")
         else
-            p @appointment.errors.full_messages
-            flash[:appointment_attributes] = @appointment.attributes
-            redirect_to("/appointments/new")
+            flash[:appointment] = @appointment.errors
+            
+            redirect_to "/appointments/new"
         end
-        
     end
 
     def edit
@@ -53,21 +45,6 @@ class AppointmentsController < ApplicationController
         @appointment.destroy
         redirect_to appointments_path(@appointments)
     end 
-
-    class ActionView::Helpers::FormBuilder
-
-        def error_messages(form_target, property)
-            result = ""
-             if( form_target.valid? == false && form_target.errors.messages[property] != nil)
-                result += "<ul>"
-                form_target.errors.messages[property].each do | error |
-                    result+= "<li>#{error}</li>"
-                end 
-                result += "</ul>"
-            end
-            result.html_safe
-        end
-    end
 
     private
 
