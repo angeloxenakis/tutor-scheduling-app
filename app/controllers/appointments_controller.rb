@@ -1,6 +1,14 @@
 class AppointmentsController < ApplicationController 
+    before_action(:check_login)
+    def check_login
+        if (session[:student_id] == nil)
+            redirect_to new_login_path
+        end
+    end
+
     def index 
-        @appointments = Appointment.all
+        student = Student.find(session[:student_id])
+        @appointments = student.appointments
     end
 
     def show
@@ -8,8 +16,12 @@ class AppointmentsController < ApplicationController
     end
 
     def new
-        @appointment = Appointment.new
-        @students = Student.all
+        if(flash[:appointment_attributes] != nil)
+            @appointment = Appointment.new(flash[:appointment_attributes])
+        else
+            @appointment = Appointment.new
+        end
+        # @students = Student.all
         @locations = Location.all
         @tutors = Tutor.all
         @subjects = Subject.all
@@ -17,7 +29,13 @@ class AppointmentsController < ApplicationController
 
     def create 
         @appointment = Appointment.create(appointment_params)
-        redirect_to appointment_path(@appointment)
+        if( @appointment.valid? )
+            redirect_to appointment_path(@appointment)
+        else
+            flash[:appointment_attributes] = @appointment.attributes
+            redirect_to("/appointments/new")
+        end
+        
     end
 
     def edit
@@ -39,6 +57,21 @@ class AppointmentsController < ApplicationController
         @appointment.destroy
         redirect_to appointments_path(@appointments)
     end 
+
+    class ActionView::Helpers::FormBuilder
+
+        def error_messages(form_target, property)
+            result = ""
+             if( form_target.valid? == false && form_target.errors.messages[property] != nil)
+                result += "<ul>"
+                form_target.errors.messages[property].each do | error |
+                    result+= "<li>#{error}</li>"
+                end 
+                result += "</ul>"
+            end
+            result.html_safe
+        end
+    end
 
     private
 

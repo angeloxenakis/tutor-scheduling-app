@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
     def check_login
         if(session[:student_id] == nil)
             redirect_to("/students/login")
+        else
+            @current_student = Student.find(session[:student_id])
         end
     end
 end
