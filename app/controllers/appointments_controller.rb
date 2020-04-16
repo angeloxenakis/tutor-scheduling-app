@@ -1,11 +1,4 @@
 class AppointmentsController < ApplicationController 
-    before_action(:check_login)
-    def check_login
-        if (session[:student_id] == nil)
-            redirect_to new_login_path
-        end
-    end
-
     def index 
         student = Student.find(session[:student_id])
         @appointments = student.appointments
@@ -21,17 +14,20 @@ class AppointmentsController < ApplicationController
         else
             @appointment = Appointment.new
         end
-        # @students = Student.all
+        @students = Student.all
         @locations = Location.all
         @tutors = Tutor.all
         @subjects = Subject.all
     end
 
     def create 
-        @appointment = Appointment.create(appointment_params)
+        @appointment = Appointment.new(appointment_params)
+        @appointment.student = @current_student
         if( @appointment.valid? )
+            @appointment.save
             redirect_to appointment_path(@appointment)
         else
+            p @appointment.errors.full_messages
             flash[:appointment_attributes] = @appointment.attributes
             redirect_to("/appointments/new")
         end
