@@ -1,0 +1,29 @@
+<head>
+</head>
+<body>
+    <h1>Tutors</h1>
+
+    <hr>
+
+    <div class="container">
+        <h4><strong><em>Create New Tutor</em></strong></h4><br>
+        <%= form_for @tutor do |f|%>
+            <%= f.label "Tutor Name:"%>
+            <%= f.text_field :name%><br><br>
+
+            <%= f.label "Select a Location:"%>
+            <%= f.collection_select :location_id, @locations, :id, :name%><br><br>
+        
+            <%= f.label "Select a Subjects:"%><br>
+            <%= f.collection_check_boxes :subject_ids, @subjects, :id, :name%><br><br><br>
+
+            <%=f.submit %>
+        <%end%><br><br>
+
+        <form method="GET" action="/tutors">
+            <input type="submit" value="Cancel">
+        </form>
+
+        <br><hr>
+    </div>
+</body>

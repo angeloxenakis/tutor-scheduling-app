@@ -1,0 +1,54 @@
+<head>
+</head>
+<body>
+    <h2>Locations</h2>
+
+    <hr>
+
+    <div class="container">
+        <h4><strong><em>Edit Location Details</em></strong></h4><br>
+
+        <%= form_for @location do |f|%>
+            <%= f.label "Location Name:" %>
+            <%= f.text_field :name, size: "30" %><br><br>
+            <%= f.label "Address:" %>
+            <%= f.text_field :address, size: "36px" %><br><br>
+
+            <hr><br>
+            
+            <strong>Subjects: </strong>
+            <ul>
+            <%@location.subjects.uniq.each do |subject|%>
+                <li><%= subject.name %></li>
+            <%end%>
+            </ul><br>
+            <strong>Tutors: </strong>
+            <ul>
+                <%@location.tutors.each do |tutor|%>
+                    <li><%= tutor.name %></li>
+                <%end%>
+            </ul><br>
+            <em><strong>Note: </strong> <a href="/../subjects">Subjects</a> & <a href="/../tutors">Tutors</a> cannot be edited from this<br> 
+            page. You can assign a tutor to a location from a<br> 
+            tutor's details page, and the tutor's subjects will <br>
+            be automatically included in the location details.</em><br><br>
+            
+            <hr><br>
+
+            <%= f.submit %>
+        <%end%><br><br>
+
+        <form method="GET" action="/locations/<%=@location.id%>">
+            <input type="submit" value="Cancel">
+        </form><br>
+
+        <hr><br>
+
+        <form method="POST" action="/locations/<%=@location.id%>">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete Location">
+        </form><br>
+
+        <hr><br><br>
+    </div>
+</body>
