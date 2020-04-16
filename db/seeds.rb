@@ -11,20 +11,14 @@ north = Location.create({name: "North", address: Faker::Address.street_address})
 south = Location.create({name: "South", address: Faker::Address.street_address})
 
 # Tutors
-# 12.times { Tutor.create({name: Faker::Name.name, location_id: Location.all.sample.id}) }
-Tutor.create({name: Faker::Name.name, location_id: Location.all.sample.id, username: "Steven", password: "flatiron"})
+Tutor.create({name: Faker::Name.name, location_id: Location.all.sample.id, username: "josh", password: "josh@tutor"})
+Tutor.create({name: Faker::Name.name, location_id: Location.all.sample.id, username: "steven", password: "steven@tutor"})
+12.times { Tutor.create({name: Faker::Name.name, location_id: Location.all.sample.id, username: Faker::Name.first_name, password: "tutor123"}) }
 
 # Students
-
-s1 = Student.create({name: Faker::Name.name, username: "ruth1", password: "ruth@student"})
-s2 = Student.create({name: Faker::Name.name})
-s3 = Student.create({name: Faker::Name.name})
-s4 = Student.create({name: Faker::Name.name})
-s5 = Student.create({name: Faker::Name.name})
-s6 = Student.create({name: Faker::Name.name})
-
-30.times { Student.create({name: Faker::Name.name}) }
-
+ruth = Student.create({name: "Ruth Obe", username: "ruth1", password: "ruth@student"})
+angelo = Student.create({name: "Angelo Xenakis", username: "angelo", password: "angelo@student"})
+30.times { Student.create({name: Faker::Name.name, username: Faker::Name.first_name, password: "student123"}) }
 
 # Subjects
 math = Subject.create({name: "Math"})
