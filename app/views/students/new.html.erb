@@ -2,7 +2,7 @@
 <head>
 </head>
 <body>
-    <h1>Students</h1>
+    <h1>Student</h1>
 
     <hr>
 
@@ -13,9 +13,18 @@
             <%= f.label "Student Name"%><br>
             <%= f.text_field :name%><br><br>
 
+            <%= f.label "Username"%><br>
+            <%= f.text_field :username%><br><br>
+
+            <%= f.label "Password"%><br>
+            <%= f.password_field :password%><br><br>
+
+            <%= f.label "Confirm Password"%><br>
+            <%= f.password_field :password_confirmation%><br><br>
+
             <hr><br>
 
-            <%=f.submit %>
+            <%=f.submit "Create Account"%>
         <%end%><br><br>
 
         <form method="GET" action="/students">
