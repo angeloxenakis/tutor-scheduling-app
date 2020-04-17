@@ -10,8 +10,9 @@
             <% @locations.each do |location| %>
                 <li><%= link_to location.name.capitalize, location_path(location)%></li><br>
             <%end%>
-        </ul><br>
-
+        </ul><br><br>
+        <%= link_to 'New Location', new_location_path, :class => "btn btn-primary btn-sm" %>
+        <%= link_to 'Home', '/home', :class => "btn btn-primary btn-sm" %>
         <hr><br>
     </div>
 </body>
