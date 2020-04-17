@@ -14,6 +14,8 @@
                 <li><%= link_to location.name.capitalize, location_path(location)%></li>
             <%end%>
         </ul><br><br>
+        <%= link_to 'New Location', new_location_path, :class => "btn btn-primary btn-sm" %>
+        <%= link_to 'Home', '/home', :class => "btn btn-primary btn-sm" %>
 
         <form method="GET" action="locations/new">
             <input type="submit" value="+ Create New Location">
