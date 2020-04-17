@@ -17,16 +17,14 @@
             <% @tutor.subjects.uniq.each do |subject|%>
                 <li><%=link_to subject.name, subject_path(subject)%></li>
             <%end%>
-        </ul><br>
-
-        <hr><br>
+        </ul><br><br>
 
         <form method="GET" action="../appointments/new">
-            <input class="book-button" type="submit" value="+ Book Appointment">
+            <input class="btn btn-primary btn-sm" type="submit" value="+ Book Appointment">
         </form><br><br>
 
         <form method="GET" action="/tutors">
-            <input class="button" type="submit" value="<-- View All Tutors">
+            <input class="btn btn-primary btn-sm" type="submit" value="<-- View All Tutors">
         </form>
 
         <br><hr>
