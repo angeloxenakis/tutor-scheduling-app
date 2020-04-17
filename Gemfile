@@ -60,3 +60,7 @@ gem 'autoprefixer-rails'
 
 
 gem "bcrypt", "~> 3.1"
+
+gem "bootstrap", "~> 4.4"
+gem "jquery", "~> 0.0.1"
+gem "popper_js", "~> 1.16"
