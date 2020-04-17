@@ -9,26 +9,24 @@
         <h4><strong><em>Create New Appointment</em></strong></h4><br>
 
         <%= form_for @appointment do |f|%>
-
             <%= f.label "Location: " %>
             <%= f.collection_select :location_id, @locations, :id, :name%><br><br>
-            <%= f.error_messages(@appointment, :location) if flash[:appointment_attributes]%>
-
             <%= f.label "Tutor: " %>
-            <%= f.collection_select :tutor_id, @tutors, :id, :name%><br><br>
-            <%= f.error_messages(@appointment, :tutor) if flash[:appointment_attributes]%>
-
+            <%= f.collection_select :tutor_id, @tutors, :id, :name%><br>
+            <font color="red"><%= f.error_messages(@appointment, :tutors) if flash[:appointment_attributes]%></font><br>
             <%= f.label "Subject: " %>
             <%= f.collection_select :subject_id, @subjects, :id, :name%><br><br>
-            <%= f.error_messages(@appointment, :subject) if flash[:appointment_attributes]%>
+            <font color="red"><%= f.error_messages(@appointment, :subject) if flash[:appointment_attributes]%></font>
 
             <%= f.label "Date: " %>
             <%= f.date_field :date%><br><br>
-            <%= f.error_messages(@appointment, :date) if flash[:appointment_attributes]%>
+            <font color="red"><%= f.error_messages(@appointment, :date) if flash[:appointment_attributes]%></font>
 
             <%= f.label "Time: " %>
-            <%= f.time_field :time%><br><br>
-            <%= f.error_messages(@appointment, :time) if flash[:appointment_attributes]%>
+            <%= f.time_field :time%><br>
+            <font color="red"><%= f.error_messages(@appointment, :time) if flash[:appointment_attributes]%></font><br>
+
+            <hr><br>
 
             <%= f.submit "Book Appointment" %>
         <%end%><br><br>
@@ -40,4 +38,3 @@
         <br><hr>
     </div>
 </body>
-

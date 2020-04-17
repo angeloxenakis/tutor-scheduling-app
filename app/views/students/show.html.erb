@@ -22,9 +22,9 @@
             </tr>
             <% @student.appointments.each do |appointment| %>
                 <tr>
-                    <td width="16%"><%=appointment.location.name%></td>
-                    <td width="16%"><%=appointment.subject.name%></td>
-                    <td width="16%"><%=appointment.tutor.name%></td>
+                    <td width="16%"><%=link_to appointment.location.name, location_path(appointment.location)%></td>
+                    <td width="16%"><%=link_to appointment.subject.name, subject_path(appointment.location)%></td>
+                    <td width="16%"><%=link_to appointment.tutor.name, tutor_path(appointment.tutor)%></td>
                     <td width="16%"><%=appointment.date%></td>
                     <td width="16%"><%=appointment.time.strftime("%H:%M")%></td>
                     <td width="16%", height="30"><%=link_to "View Appt", appointment_path(appointment)%></td>
