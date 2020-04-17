@@ -13,11 +13,7 @@
             <% @subjects.each do |subject|%>
                 <li><%= link_to subject.name, subject_path(subject) %></li>
             <% end %>
-        </ul><br><br>
-
-        <form method="GET" action="/subjects/new">
-            <input type="submit" value="+ Create New Subject">
-        </form><br><br>
+        </ul><br>
 
         <hr><br>
 </body>

@@ -8,9 +8,11 @@
     <div class="container">
         <h4><strong><em>Student Details</em></strong></h4><br>
 
-        <strong>Name: </strong><%=@student.name%><br><br>
+        <strong>Name: </strong><%=@student.name%><br><br><br>
 
-        <strong><%= @student.name %>'s Appointments:</strong><br><br>
+        <hr><br>
+
+        <h4><strong><em><%= @student.name %>'s Appointments:</em></strong></h4><br>
         <table style="width:100%">
             <tr>
                 <th height="50">Location</th>
@@ -36,16 +38,12 @@
 
         <form method="GET" action="/students/<%=@student.id%>/edit">
             <input type="submit" value="Edit Student">
-        </form><br>
-
-        <form method="GET" action="../appointments/new">
-            <input type="submit" value="Book Appointment">
         </form><br><br>
 
-        <form method="GET" action="/students">
-            <input type="submit" value="<-- Back to Students">
-        </form>
+        <form method="GET" action="../appointments/new">
+            <input type="submit" value="+ Book Appointment">
+        </form><br>
 
-        <br><hr>
+        <hr>
     </div>
 </body>
