@@ -20,24 +20,15 @@
 
             <%= f.label "Time: " %>
             <%= f.time_field :time%><br>
-            <font color="red"><%= f.error_messages(@appointment, :time) if flash[:appointment_attributes]%></font><br>
+            <font color="red"><%= f.error_messages(@appointment, :time) if flash[:appointment_attributes]%></font><br><br>
 
-            <hr><br>
-
-            <div class="update-button"><%= f.submit "Update Appointment" %></div>
+            <%= f.submit "Update Appointment", :class => 'btn btn-primary btn-sm' %>
         <%end%><br><br>
 
-        <form method="GET" action="/appointments">
-            <input type="submit" value="Cancel">
-        </form><br>
+        <%= link_to 'Cancel', "/appointments/#{@appointment.id}", :class => "btn btn-primary btn-sm" %><br><br>
 
         <hr><br>
 
-        <form method="POST" action="/appointments/delete">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="Delete Appointment">
-        </form><br>
-
-        <hr>
+        <%= link_to 'Delete Appointment', "/appointments/#{@appointment.id}/delete", :class => "btn btn-primary btn-sm" %><br><br>
     </div>
 </body>

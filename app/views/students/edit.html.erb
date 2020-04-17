@@ -6,17 +6,18 @@
         <h4><strong><em>Edit Student Details</em></strong></h4><br>
 
         <%= form_for @student do |f|%>
-            <%= f.label "Student Name"%><br>
-            <div class="input-text"><%= f.text_field :name%><br><br></div>
+            <%= f.label "Student Name:"%>
+            <div class="input-text"><%= f.text_field :name%></div>
 
             <hr><br>
 
-            <%=f.submit %><br><br><br>
+            <%=f.submit "Update Student",  :class => 'btn btn-primary btn-sm' %><br><br><br>
 
-            <form method="GET" action="/students/<%=@student.id%>">
-                <input class="button" type="submit" value="Cancel">
-            </form><br>
         <%end%>
+
+        <form method="GET" action="/students/<%=@student.id%>">
+            <input class="btn btn-primary btn-sm" type="submit" value="Cancel">
+        </form><br>
 
         <hr><br>
     </div>

@@ -16,13 +16,9 @@
 
     <hr><br>
 
-    <form method="GET" action="../appointments/new">
-        <input type="submit" value="+ Book Appointment">
-    </form><br><br>
+    <%= link_to '+ Book Appointment', "../appointments/new", :class => "btn btn-primary btn-sm" %><br><br>
 
-    <form method="GET" action="/subjects">
-        <input type="submit" value="<-- View All Subjects">
-    </form>
+    <%= link_to '<-- View All Subjects', "/subjects", :class => "btn btn-primary btn-sm" %><br><br>
 
     <br><hr>
     </div>
