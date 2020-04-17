@@ -2,6 +2,7 @@
 </head>
 <body>
     <div class="container">
+        <hr>
         <h3><strong><em>Edit Location Details</em></strong></h3><br>
 
         <%= form_for @location do |f|%>
@@ -35,14 +36,14 @@
         <%end%><br><br>
 
         <form method="GET" action="/locations/<%=@location.id%>">
-            <input type="submit" value="Cancel">
+            <input class="button" type="submit" value="Cancel">
         </form><br>
 
         <hr><br>
 
         <form method="POST" action="/locations/<%=@location.id%>">
             <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="Delete Location">
+            <input class="button" type="submit" value="Delete Location">
         </form><br>
 
         <hr><br><br>

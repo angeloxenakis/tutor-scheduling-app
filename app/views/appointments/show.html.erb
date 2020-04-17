@@ -2,6 +2,7 @@
 </head>
 <body>
     <div class="container">
+        <hr>
         <h3><strong><em>Appointment Details</em></strong></h3><br>
         <strong>Student: </strong><%=@appointment.student.name.capitalize%><br><br>
 
@@ -18,11 +19,11 @@
         <hr><br>
 
         <form method="GET" action="/appointments/<%=@appointment.id%>/edit">
-            <input type="submit" value="Edit Appointment">
+            <input class="button" type="submit" value="Edit Appointment">
         </form><br><br>
 
-        <form method="GET" action="/locations">
-            <input type="submit" value="<-- Back to Locations">
+        <form method="GET" action="/students/<%=@current_student.id%>">
+            <input class="button" type="submit" value="<-- Back to Student Details">
         </form>
 
         <br><hr>

@@ -2,6 +2,7 @@
 </head>
 <body>
     <div class="container">
+        <hr>
         <h3><strong><em>Create New Appointment</em></strong></h3><br>
 
         <%= form_for @appointment do |f|%>
@@ -27,8 +28,8 @@
             <%= f.submit "Book Appointment" %>
         <%end%><br><br>
 
-        <form method="GET" action="/appointments">
-            <input type="submit" value="Cancel">
+        <form method="GET" action="/students/<%=@current_student.id%>">
+            <input class="button" type="submit" value="Cancel">
         </form>
 
         <br><hr>

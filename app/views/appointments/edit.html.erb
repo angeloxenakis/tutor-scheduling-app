@@ -2,6 +2,7 @@
 </head>
 <body>
     <div class="container">
+        <hr>
         <h3><strong><em>Edit Appointment Details</em></strong></h3><br>
         <%= form_for @appointment do |f|%>
             <%= f.label "Location: " %>
@@ -23,7 +24,7 @@
 
             <hr><br>
 
-            <%= f.submit "Update Appointment" %>
+            <div class="update-button"><%= f.submit "Update Appointment" %></div>
         <%end%><br><br>
 
         <form method="GET" action="/appointments">

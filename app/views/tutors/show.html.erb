@@ -2,6 +2,7 @@
 </head>
 <body>
     <div class="container">
+        <hr>
         <h3><strong><em>Tutor Details</em></strong></h3><br>
 
         <strong>Name: </strong><%=@tutor.name%><br><br>
@@ -21,11 +22,11 @@
         <hr><br>
 
         <form method="GET" action="../appointments/new">
-            <input type="submit" value="+ Book Appointment">
+            <input class="book-button" type="submit" value="+ Book Appointment">
         </form><br><br>
 
         <form method="GET" action="/tutors">
-            <input type="submit" value="<-- View All Tutors">
+            <input class="button" type="submit" value="<-- View All Tutors">
         </form>
 
         <br><hr>

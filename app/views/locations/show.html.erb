@@ -2,6 +2,7 @@
 </head>
 <body>
     <div class="container">
+        <hr>
         <h3><strong><em>Location Details</em></strong></h3><br>
 
         <strong>Name: </strong> <%= @location.name.capitalize %><br><br>
@@ -25,13 +26,13 @@
         <hr><br>
 
         <form method="GET" action="../appointments/new">
-            <input type="submit" value="+ Book Appointment">
+            <input class="book-button" type="submit" value="+ Book Appointment">
         </form><br><br>
 
         <form method="GET" action="/locations">
-            <input type="submit" value="<-- View All Locations">
+            <input class="button" type="submit" value="<-- View All Locations">
         </form><br>
 
-        <hr><br><br>
+        <hr><br>
     </div>
 </body>
