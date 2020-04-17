@@ -11,13 +11,9 @@
 
         <ul>
             <% @locations.each do |location| %>
-                <li><%= link_to location.name.capitalize, location_path(location)%></li>
+                <li><%= link_to location.name.capitalize, location_path(location)%></li><br>
             <%end%>
-        </ul><br><br>
-
-        <form method="GET" action="locations/new">
-            <input type="submit" value="+ Create New Location">
-        </form><br>
+        </ul><br>
 
         <hr><br>
     </div>
