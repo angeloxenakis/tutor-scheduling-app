@@ -7,28 +7,24 @@
 
     <div class="container">
     <h4><strong><em>Subject Details</em></strong></h4><br>
-    <strong>Name: </strong><%=@subject.name.capitalize%><br><br>
+    <strong>Subject Name: </strong><%=@subject.name.capitalize%><br><br>
 
     <strong>Tutors Teaching <%=@subject.name.capitalize%>: </strong><br><br>
 
     <ul>
         <% @subject.tutors.each do |tutor|%>
-            <li><%=tutor.name%></li>
+            <li><%=link_to tutor.name, tutor_path(tutor)%></li>
         <%end%>
     </ul><br>
 
     <hr><br>
 
-    <form method="GET" action="/subjects/<%=@subject.id%>/edit">
-        <input type="submit" value="Edit Subject">
-    </form><br>
-
     <form method="GET" action="../appointments/new">
-        <input type="submit" value="Book Appointment">
+        <input type="submit" value="+ Book Appointment">
     </form><br><br>
 
     <form method="GET" action="/subjects">
-        <input type="submit" value="<-- Back to Subjects">
+        <input type="submit" value="<-- View All Subjects">
     </form>
 
     <br><hr>

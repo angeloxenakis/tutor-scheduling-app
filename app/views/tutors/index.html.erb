@@ -7,16 +7,24 @@
 
     <div class="container">
         <h4><strong><em>All Tutors</em></strong></h4>
-        <em>Click on a Tutor below to view their details</em><br><br><br>
-        <ul>
-        <% @tutors.each do |tutor|%>
-            <li><%= link_to tutor.name, tutor_path(tutor) %></li>    
-        <% end %>
-        </ul><br><br>
+        <em>Click on a "View Tutor" below to view a tutor's details</em><br><br>
 
-        <form method="GET" action="tutors/new">
-            <input type="submit" value="+ Create New Tutor">
-        </form><br><br>
+        <table style="width:100%">
+            <tr>
+                <th height="50">Tutor</th>
+                <th height="50">Subjects</th>
+                <th height="50">Location</th>
+                <th height="50"> </th>
+            </tr>
+            <% @tutors.each do |tutor| %>
+                <tr>
+                    <td width="16%"><%=tutor.name%></td>
+                    <td width="16%"><%tutor.subjects.uniq.each do |subject|%><%=subject.name%></li> </ul><%end%></td>
+                    <td width="16%"><%=tutor.location.name%></td>
+                    <td width="16%", height="30"><%=link_to "View Tutor", tutor_path(tutor)%></td>
+                </tr>
+            <% end %>
+        </table><br><br>
 
         <hr>
     </div>
