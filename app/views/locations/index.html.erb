@@ -6,11 +6,23 @@
         <h3><strong><em>All Locations</em></strong></h3>
         <em>Click on a location below to view its details</em><br><br><br>
 
-        <ul>
-            <% @locations.each do |location| %>
-                <li><%= link_to location.name.capitalize, location_path(location)%></li><br>
-            <%end%>
-        </ul><br><br>
+        <table style="width:100%">
+            <tr>
+                <th><h4><%= link_to "#{@locations[0].name.capitalize} Location", location_path(@locations[0])%><h4></th>
+                <th> </th>
+            </tr>
+            <tr>
+                <td><img src="https://images.unsplash.com/photo-1547653872-052e3539decc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"></td>
+                <td>Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah</td>
+            </tr>
+        </table><br><br>
+
+        <h4><%= link_to "#{@locations[1].name.capitalize} Location", location_path(@locations[0])%><h4><br>
+        <img src="https://images.unsplash.com/photo-1562407061-ccabc9167d7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80"><br><br>
+
+        <h4><%= link_to "#{@locations[2].name.capitalize} Location", location_path(@locations[0])%><h4><br>
+        <img src="https://images.unsplash.com/photo-1562855742-bcdfa2de751d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1778&q=80"><br><br>
+
         <hr><br>
     </div>
 </body>
