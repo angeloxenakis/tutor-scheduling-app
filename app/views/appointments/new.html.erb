@@ -6,21 +6,21 @@
         <h3><strong><em>Create New Appointment</em></strong></h3><br>
 
         <%= form_for @appointment do |f|%>
-            <%= f.label "Location: " %>
+            <%= f.label "Location: " , :class => "col-sm-2 col-form-label col-form-label-sm"%>
             <%= f.collection_select :location_id, @locations, :id, :name%><br><br>
-            <%= f.label "Tutor: " %>
+            <%= f.label "Tutor: " , :class => "col-sm-2 col-form-label col-form-label-sm"%>
             <%= f.collection_select :tutor_id, @tutors, :id, :name%><br>
             <font color="red"><%= f.error_messages(@appointment, :tutors) if flash[:appointment_attributes]%></font><br>
-            <%= f.label "Subject: " %>
+            <%= f.label "Subject: " , :class => "col-sm-2 col-form-label col-form-label-sm"%>
             <%= f.collection_select :subject_id, @subjects, :id, :name%><br><br>
             <font color="red"><%= f.error_messages(@appointment, :subject) if flash[:appointment_attributes]%></font>
 
-            <%= f.label "Date: " %>
-            <%= f.date_field :date%><br><br>
-            <font color="red"><%= f.error_messages(@appointment, :date) if flash[:appointment_attributes]%></font>
+            <%= f.label "Date: " , :class => "col-sm-2 col-form-label col-form-label-sm"%>
+            <%= f.date_field :date, :class => 'col-sm-4'%><br><br>
+            <font color="red"><%= f.error_messages(@appointment, :date) if flash[:appointment_attributes]%></font><br>
 
-            <%= f.label "Time: " %>
-            <%= f.time_field :time%><br>
+            <%= f.label "Time: " , :class => "col-sm-2 col-form-label col-form-label-sm"%>
+            <%= f.time_field :time, :class => 'col-sm-4'%><br>
             <font color="red"><%= f.error_messages(@appointment, :time) if flash[:appointment_attributes]%></font><br>
 
             <hr><br>
