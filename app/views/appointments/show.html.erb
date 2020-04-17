@@ -1,13 +1,10 @@
 <head>
 </head>
 <body>
-    <h1>Appointments</h1>
-
-    <hr>
-
     <div class="container">
-        <h4><strong><em>Appointment Details</em></strong></h4><br>
-        <strong>Student: </strong><%= link_to @appointment.student.name.capitalize, student_path(@appointment.student) %><br><br>
+        <hr>
+        <h3><strong><em>Appointment Details</em></strong></h3><br>
+        <strong>Student: </strong><%=@appointment.student.name.capitalize%><br><br>
 
         <strong>Location: </strong><%= link_to @appointment.location.name.capitalize, location_path(@appointment.location) %><br><br>
 
@@ -22,11 +19,11 @@
         <hr><br>
 
         <form method="GET" action="/appointments/<%=@appointment.id%>/edit">
-            <input type="submit" value="Edit Appointment">
+            <input class="button" type="submit" value="Edit Appointment">
         </form><br><br>
 
-        <form method="GET" action="<%=student_path(@appointment.student)%>">
-            <input type="submit" value="<-- Back to Student Details">
+        <form method="GET" action="/students/<%=@current_student.id%>">
+            <input class="button" type="submit" value="<-- Back to Student Details">
         </form>
 
         <br><hr>

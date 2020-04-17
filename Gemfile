@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.6'
+gem 'rails', '~> 6.0.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -60,3 +60,11 @@ gem 'autoprefixer-rails'
 
 
 gem "bcrypt", "~> 3.1"
+
+gem "bootstrap", "~> 4.4"
+gem "jquery", "~> 0.0.1"
+gem "popper_js", "~> 1.16"
+
+gem 'webpacker', '~> 4.x'
+
+gem 'optimist', '~> 3.0'

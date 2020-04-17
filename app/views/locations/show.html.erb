@@ -1,12 +1,9 @@
 <head>
 </head>
 <body>
-    <h2>Locations</h2>
-
-    <hr>
-
     <div class="container">
-        <h4><strong><em>Location Details</em></strong></h4><br>
+        <hr>
+        <h3><strong><em>Location Details</em></strong></h3><br>
 
         <strong>Name: </strong> <%= @location.name.capitalize %><br><br>
 
@@ -26,38 +23,18 @@
             <%end%>
         </ul><br>
 
-        <strong><%=@location.name%>'s Appointments:</strong><br>
-        <table style="width:100%">
-            <tr>
-                <th height="50">Student</th>
-                <th height="50">Subject</th>
-                <th height="50">Tutor</th>
-                <th height="50">Date</th>
-                <th height="50">Time</th>
-                <th height="50"> </th>
-            </tr>
-            <% @location.appointments.each do |appointment| %>
-                <tr>
-                    <td width="16%"><%=appointment.student.name%></td>
-                    <td width="16%"><%=appointment.subject.name%></td>
-                    <td width="16%"><%=appointment.tutor.name%></td>
-                    <td width="16%"><%=appointment.date%></td>
-                    <td width="16%"><%=appointment.time.strftime("%H:%M")%></td>
-                    <td width="16%", height="30"><%=link_to "View Appt", appointment_path(appointment)%></td>
-                </tr>
-            <% end %>
-        </table><br><br>
-
         <hr><br>
 
         <form method="GET" action="../appointments/new">
-            <input type="submit" value="+ Book Appointment">
+            <input class="book-button" type="submit" value="+ Book Appointment">
         </form><br><br>
 
         <form method="GET" action="/locations">
-            <input type="submit" value="<-- View All Locations">
+            <input class="button" type="submit" value="<-- View All Locations">
         </form><br>
 
         <hr><br><br>
+
+        <%= link_to 'Back', locations_path, :class => "btn btn-primary btn-sm" %>
     </div>
 </body>

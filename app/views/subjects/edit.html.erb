@@ -1,12 +1,9 @@
 <head>
 </head>
 <body>
-    <h1>Subjects</h1>
-
-    <hr>
-
     <div class="container">
-        <h4><strong><em>Edit Subject Details</em></strong></h4><br>
+        <hr>
+        <h3><strong><em>Edit Subject Details</em></strong></h3><br>
         <%= form_for @subject do |f|%>
             <%= f.label "Subject Name"%><br>
             <%= f.text_field :name%><br><br>

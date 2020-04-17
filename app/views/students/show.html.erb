@@ -1,18 +1,19 @@
 <head>
 </head>
 <body>
-    <h2>Students</h2> 
-
-    <hr>
-
     <div class="container">
-        <h4><strong><em>Student Details</em></strong></h4><br>
+        <hr>
+        <h3><strong><em>Student Details</em></strong></h3><br>
 
         <strong>Name: </strong><%=@student.name%><br><br><br>
 
+        <form method="GET" action="/students/<%=@student.id%>/edit">
+            <input class="button" type="submit" value="Edit Info">
+        </form><br>
+
         <hr><br>
 
-        <h4><strong><em><%= @student.name %>'s Appointments:</em></strong></h4><br>
+        <h3><strong><em><%= @student.name %>'s Appointments:</em></strong></h3><br>
         <table style="width:100%">
             <tr>
                 <th height="50">Location</th>
@@ -34,14 +35,8 @@
             <% end %>
         </table><br><br>
 
-        <hr><br>
-
-        <form method="GET" action="/students/<%=@student.id%>/edit">
-            <input type="submit" value="Edit Student">
-        </form><br><br>
-
         <form method="GET" action="../appointments/new">
-            <input type="submit" value="+ Book Appointment">
+            <input class="book-button" type="submit" value="+ Book Appointment">
         </form><br>
 
         <hr>

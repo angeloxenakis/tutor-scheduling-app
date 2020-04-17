@@ -1,12 +1,9 @@
 <head>
 </head>
 <body>
-    <h2>Locations</h2>
-
-    <hr>
-
     <div class="container">
-        <h4><strong><em>Create New Location</em></strong></h4><br>
+        <hr>
+        <h3><strong><em>Create New Location</em></strong></h3><br>
 
         <%= form_for @location do |f|%>
             <%= f.label "Location Name:" %>
@@ -25,8 +22,10 @@
 
 
         <form method="GET" action="/locations">
-            <input type="submit" value="Cancel">
+            <input class="button" type="submit" value="Cancel">
         </form>
+
+        <%= link_to 'Back', locations_path, :class => "btn btn-primary btn-sm" %>
 
         <br><hr>
     </div>

@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html>
+<style>
+
+
+
+</style>
+
   <head>
-    <title>TutorSchedulingApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "About TutorMe.Com" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "About TutorMe.Com" %>">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <%=render "layouts/header"%>
-
   <body>
-    <%= yield %>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+
+    <main role="main">
+      <%= content_for?(:content) ? yield(:content) : yield %>
+    </main>
+
   </body>
 </html>
