@@ -12,19 +12,17 @@
         an appointment with. Login or sign up now to get started!<br><br>
         <%= form_with({ method: 'POST', url: '/students/login' }) do  | f | %>
             <div>
-                <%= f.label "Username"%>
+                <%= f.label "Username", :class => "col-sm-2 col-form-label col-form-label-sm"%>
                 <%= f.text_field(:username) %><br><br>
             </div>
             <div>
-                <%=f.label "Password"%>
+                <%=f.label "Password", :class => "col-sm-2 col-form-label col-form-label-sm"%>
                 <%= f.password_field(:password) %><br><br>
             </div>
-            <%= f.submit('Login') %>
+            <%= f.submit 'Login', :class => 'btn btn-primary mb-2'%>
         <% end %><br><br>
 
-        <%= form_with({ method: 'GET', url: '/students/new' }) do  | f | %>
-            <%= f.submit('Sign Up') %>
-        <% end %><br><br>
+        
 
         <hr>
         

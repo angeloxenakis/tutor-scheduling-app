@@ -7,25 +7,25 @@
         <h4><strong><em>Create New Student</em></strong></h4><br>
 
         <%= form_for @student do |f|%>
-            <%= f.label "Student Name"%><br>
-            <%= f.text_field :name%><br><br>
+            <%= f.label "Student Name", :class => "col-sm-2 col-form-label col-form-label-sm"%><br>
+            <%= f.text_field :name, :class => 'col-sm-4'%><br><br>
 
-            <%= f.label "Username"%><br>
-            <%= f.text_field :username%><br><br>
+            <%= f.label "Username", :class => "col-sm-2 col-form-label col-form-label-sm"%><br>
+            <%= f.text_field :username, :class => 'col-sm-4'%><br><br>
 
-            <%= f.label "Password"%><br>
-            <%= f.password_field :password%><br><br>
+            <%= f.label "Password", :class => "col-sm-2 col-form-label col-form-label-sm"%><br>
+            <%= f.password_field :password, :class => 'col-sm-4'%><br><br>
 
-            <%= f.label "Confirm Password"%><br>
-            <%= f.password_field :password_confirmation%><br><br>
+            <%= f.label "Confirm Password", :class => "col-sm-2 col-form-label col-form-label-sm"%><br>
+            <%= f.password_field :password_confirmation, :class => 'col-sm-4'%><br><br>
 
             <hr><br>
 
-            <%=f.submit "Create Account"%>
+            <%=f.submit "Create Account", :class => 'btn btn-primary mb-2'%>
         <%end%><br><br>
 
         <form method="GET" action="/students">
-            <input type="submit" value="Cancel">
+            <input type="submit" value="Cancel" class='btn btn-primary mb-2'>
         </form>
 
         <br><hr>
