@@ -10,16 +10,21 @@
 
         <strong>Name: </strong><%=@tutor.name%><br><br>
 
-        <strong>Location: </strong><%=@tutor.location.name%><br><br>
+        <strong>Location: </strong><%=link_to @tutor.location.name, location_path(@tutor.location)%><br><br>
 
-        <strong><%=@tutor.name%>'s Subjects: </strong><br>
+        <strong>About: </strong>
+        <p><%=@tutor.name%> is a tutor at the <%=@tutor.location.name%> campus.</p><br>
+
+        <strong><%=@tutor.name%>'s Subjects: </strong><br><br>
         <ul>
             <% @tutor.subjects.uniq.each do |subject|%>
-                <li><%=subject.name%></li>
+                <li><%=link_to subject.name, subject_path(subject)%></li>
             <%end%>
         </ul><br>
 
-        <strong><%=@tutor.name%>'s Appointments: </strong><br>
+        <hr><br>
+
+        <h4><strong><em><%=@tutor.name%>'s Appointments: </em></strong></h4><br>
         <table style="width:100%">
             <tr>
                 <th height="50">Location</th>
@@ -43,16 +48,12 @@
 
         <hr><br>
 
-        <form method="GET" action="/tutors/<%=@tutor.id%>/edit">
-            <input type="submit" value="Edit Tutor">
-        </form><br>
-
         <form method="GET" action="../appointments/new">
-            <input type="submit" value="Book Appointment">
+            <input type="submit" value="+ Book Appointment">
         </form><br><br>
 
         <form method="GET" action="/tutors">
-            <input type="submit" value="<-- Back to Tutors">
+            <input type="submit" value="<-- View All Tutors">
         </form>
 
         <br><hr>
