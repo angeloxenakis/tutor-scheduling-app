@@ -16,3 +16,5 @@
 = require jquery
 = require bootstrap-sprockets
 
+import "bootstrap"
+import "../stylesheets/application"
