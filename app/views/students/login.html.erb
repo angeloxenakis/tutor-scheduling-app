@@ -1,11 +1,35 @@
-<%= form_with({ method: 'POST', url: '/students/login' }) do  | f | %>
-    <div>
-        <%= f.label "Username"%>
-        <%= f.text_field(:username) %>
+<head>
+</head>
+<body>
+    <h2>TutorMe.com</h2> 
+
+    <hr>
+
+    <div class="container">
+        <h3>Welcome to TutorMe.com</h3><br>
+
+        <p>TutorMe.com is a website for you, the student, to login <br>
+        and schedule studying sessions with qualified tutors in the <br>
+        subject of your choice! You can view different campus<br>
+        locations, subjects of study, or a list of all tutors to book<br>
+        an appointment with. Login or sign up now to get started!<br><br>
+        <%= form_with({ method: 'POST', url: '/students/login' }) do  | f | %>
+            <div>
+                <%= f.label "Username"%>
+                <%= f.text_field(:username) %><br><br>
+            </div>
+            <div>
+                <%=f.label "Password"%>
+                <%= f.password_field(:password) %><br><br>
+            </div>
+            <%= f.submit('Login') %>
+        <% end %><br><br>
+
+        <%= form_with({ method: 'GET', url: '/students/new' }) do  | f | %>
+            <%= f.submit('Sign Up') %>
+        <% end %><br><br>
+
+        <hr>
+        
     </div>
-    <div>
-        <%=f.label "Password"%>
-        <%= f.password_field(:password) %>
-    </div>
-    <%= f.submit('Login') %>
-<% end %>
+</body>
