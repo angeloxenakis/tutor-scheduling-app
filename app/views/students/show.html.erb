@@ -3,12 +3,12 @@
 <body>
     <div class="container">
         <hr>
-        <h3><strong><em>Student Details</em></strong></h3><br>
+        <h3><strong><em><%= @student.name %>'s Details:</em></strong></h3><br>
 
-        <strong>Name: </strong><%=@student.name%><br><br><br>
+        <strong>Name: </strong><%=@student.name%><br><br>
 
         <form method="GET" action="/students/<%=@student.id%>/edit">
-            <input class="button" type="submit" value="Edit Info">
+            <input class="btn btn-primary btn-sm" type="submit" value="Edit Info">
         </form><br>
 
         <hr><br>
@@ -35,9 +35,7 @@
             <% end %>
         </table><br><br>
 
-        <form method="GET" action="../appointments/new">
-            <input class="book-button" type="submit" value="+ Book Appointment">
-        </form><br>
+        <%= link_to '+ Book Appointment', "../appointments/new", :class => "btn btn-primary btn-sm" %><br><br>
 
         <hr>
     </div>

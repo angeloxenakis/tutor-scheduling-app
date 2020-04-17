@@ -23,18 +23,10 @@
             <%end%>
         </ul><br>
 
+        <%= link_to '+ Book Appointment', "../appointments/new", :class => "btn btn-primary btn-sm" %><br><br>
+
+        <%= link_to '<-- Back', locations_path, :class => "btn btn-primary btn-sm" %><br><br>
+
         <hr><br>
-
-        <form method="GET" action="../appointments/new">
-            <input class="book-button" type="submit" value="+ Book Appointment">
-        </form><br><br>
-
-        <form method="GET" action="/locations">
-            <input class="button" type="submit" value="<-- View All Locations">
-        </form><br>
-
-        <hr><br><br>
-
-        <%= link_to 'Back', locations_path, :class => "btn btn-primary btn-sm" %>
     </div>
 </body>
