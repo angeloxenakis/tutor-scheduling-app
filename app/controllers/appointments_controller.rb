@@ -30,8 +30,7 @@ class AppointmentsController < ApplicationController
             p @appointment.errors.full_messages
             flash[:appointment_attributes] = @appointment.attributes
             redirect_to("/appointments/new")
-        end
-        
+        end  
     end
 
     def edit
@@ -42,10 +41,23 @@ class AppointmentsController < ApplicationController
         @subjects = Subject.all
     end
 
+    # def update
+    #     @appointment = Appointment.find(params[:id])
+    #     @appointment.update(appointment_params)
+    #     redirect_to appointment_path(@appointment)
+    # end
+
     def update
-        @appointment = Appointment.find(params[:id])
-        @appointment.update(appointment_params)
-        redirect_to appointment_path(@appointment)
+        @appointment = Appointment.new(appointment_params)
+        @appointment.student = @current_student
+        if( @appointment.valid? )
+            @appointment.save
+            redirect_to appointment_path(@appointment)
+        else
+            p @appointment.errors.full_messages
+            flash[:appointment_attributes] = @appointment.attributes
+            redirect_to("/appointments/#{@appointment.id}/edit")
+        end  
     end
 
     def destroy
