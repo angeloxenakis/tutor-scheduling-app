@@ -25,11 +25,11 @@
 
             <hr><br>
 
-            <%= f.submit "Book Appointment" %>
+            <%= f.submit "Book Appointment", :class=> "btn btn-primary btn-sm" %>
         <%end%><br><br>
 
         <form method="GET" action="/students/<%=@current_student.id%>">
-            <input class="button" type="submit" value="Cancel">
+            <input class="btn btn-primary btn-sm" type="submit" value="Cancel">
         </form>
 
         <br><hr>
