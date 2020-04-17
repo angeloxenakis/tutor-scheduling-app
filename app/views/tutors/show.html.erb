@@ -1,12 +1,8 @@
 <head>
 </head>
 <body>
-    <h1>Tutors</h1>
-
-    <hr>
-
     <div class="container">
-        <h4><strong><em>Tutor Details</em></strong></h4><br>
+        <h3><strong><em>Tutor Details</em></strong></h3><br>
 
         <strong>Name: </strong><%=@tutor.name%><br><br>
 
@@ -21,30 +17,6 @@
                 <li><%=link_to subject.name, subject_path(subject)%></li>
             <%end%>
         </ul><br>
-
-        <hr><br>
-
-        <h4><strong><em><%=@tutor.name%>'s Appointments: </em></strong></h4><br>
-        <table style="width:100%">
-            <tr>
-                <th height="50">Location</th>
-                <th height="50">Subject</th>
-                <th height="50">Student</th>
-                <th height="50">Date</th>
-                <th height="50">Time</th>
-                <th height="50"> </th>
-            </tr>
-            <% @tutor.appointments.each do |appointment| %>
-                <tr>
-                    <td width="16%"><%=appointment.location.name%></td>
-                    <td width="16%"><%=appointment.subject.name%></td>
-                    <td width="16%"><%=appointment.student.name%></td>
-                    <td width="16%"><%=appointment.date%></td>
-                    <td width="16%"><%=appointment.time.strftime("%H:%M")%></td>
-                    <td width="16%", height="30"><%=link_to "View Appt", appointment_path(appointment)%></td>
-                </tr>
-            <% end %>
-        </table><br><br>
 
         <hr><br>
 

@@ -1,12 +1,8 @@
 <head>
 </head>
 <body>
-    <h1>Appointments</h1>
-
-    <hr>
-
     <div class="container">
-        <h4><strong><em>Edit Appointment Details</em></strong></h4><br>
+        <h3><strong><em>Edit Appointment Details</em></strong></h3><br>
         <%= form_for @appointment do |f|%>
             <%= f.label "Location: " %>
             <%= f.collection_select :location_id, @locations, :id, :name%><br><br>
